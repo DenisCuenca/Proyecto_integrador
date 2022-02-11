@@ -3,12 +3,14 @@
 -- Materia: Fundamentos de Base de Datos - Octubre 2021 - Febrero 2022
 -- Proyecto Final - Ciclo de vida de bases de datos relacionales normalizada
 -- Estudiante: Denis Alexander Cuenca Buele | dacuenca7@utpl.edu.ec
--- Link del proyecto en Github: 
+-- Link del proyecto en Github: https://github.com/DenisCuenca/Proyecto_integrador.git
 -- Profesor: Nelson Piedra | http://investigacion.utpl.edu.ec/nopiedra
 -- Fecha: Loja, 8 de febrero del 2022
 
 
-Proyecto cargado en Github: 
+-- link a presentación: https://www.canva.com/design/DAE3wyC5qhY/Y4ncd843TG_CeD82H85yRA/view?utm_content=DAE3wyC5qhY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
+Proyecto cargado en Github url:  https://github.com/DenisCuenca/Proyecto_integrador.git
 Cuenta: DenisCuenca
 Repositorio: Proyecto_integrador
 
@@ -82,29 +84,36 @@ Tras haber declarado las noevas tablas se realiza el proceso de determinar las d
 -keywords: 
 	 id_movie,  id → keyword
 
+-movie_production companies:
+ 	 id_movie, id –>  	 id_movie, id 
 
 -production companies:
- 	 id_movie, id →  company name
+	 id →  company name
 
+-movie_production countries:
+ 	 id_movie, iso_3166_1 –>  	 id_movie, id 
 
 -production countries :
-	 id_movie, iso_3166_1  → country
+	 iso_3166_1  → country
+
+
+-movie_spoken languages :
+	Iso_639_1, id_movie →  	Iso_639_1, id_movie
 
 
 -spoken languages :
-	Iso_639_1, id_movie →  name
-
+	Iso_639_1→  name
 
 
 - crew:
-	id_crew → name, gender
-	id_movie, id_crew, credit_id →  job,  department
+	id_movie, credit_id -->   job,  department, id_crew
+
+- person:
+	credit_id → name, gender, 
 
 
-
--Director:  
-	id, id_movie →director  name_production_company
-
+-movie_director:  
+	id_movie, credit_id -->  id_movie, credit_id 
 
 
 

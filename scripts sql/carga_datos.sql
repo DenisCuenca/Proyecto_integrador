@@ -3,7 +3,7 @@
 -- Materia: Fundamentos de Base de Datos - Octubre 2021 - Febrero 2022
 -- Proyecto Final - Ciclo de vida de bases de datos relacionales normalizada
 -- Estudiante: Denis Alexander Cuenca Buele | dacuenca7@utpl.edu.ec
--- Link del proyecto en Github: 
+-- Link del proyecto en Github: https://github.com/DenisCuenca/Proyecto_integrador.git
 -- Profesor: Nelson Piedra | http://investigacion.utpl.edu.ec/nopiedra
 -- Fecha: Loja, 8 de febrero del 2022
 

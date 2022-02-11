@@ -3,7 +3,7 @@
 -- Materia: Fundamentos de Base de Datos - Octubre 2021 - Febrero 2022
 -- Proyecto Final - Ciclo de vida de bases de datos relacionales normalizada
 -- Estudiante: Denis Alexander Cuenca Buele | dacuenca7@utpl.edu.ec
--- Link del proyecto en Github: 
+-- Link del proyecto en Github:  https://github.com/DenisCuenca/Proyecto_integrador.git
 -- Profesor: Nelson Piedra | http://investigacion.utpl.edu.ec/nopiedra
 -- Fecha: Loja, 8 de febrero del 2022
 
@@ -158,7 +158,8 @@ CREATE TABlE movie_production_companies (
 	id_production_company INT NOT NULL,
 	PRIMARY KEY(id_Movie, id_production_company),
 	CONSTRAINT FK_id_movie FOREIGN KEY(id_movie) REFERENCES movie(id),
-	CONSTRAINT FK_id_production_company FOREIGN KEY(id_production_company) REFERENCES production_companies(id_production_company)
+	CONSTRAINT FK_id_production_company FOREIGN KEY(id_production_company)
+      REFERENCES production_companies(id_production_company)
 );
 
 
@@ -178,8 +179,10 @@ CREATE TABlE movie_production_countries (
 	id_movie INT NOT NULL,
 	iso_3166_1 VARCHAR (5) NOT NULL,
 	PRIMARY KEY(id_movie, iso_3166_1),
-	CONSTRAINT FK_id_movie2 FOREIGN KEY(id_movie) REFERENCES movie(id),
-	CONSTRAINT FK_iso_3166_1 FOREIGN KEY(iso_3166_1) REFERENCES production_countries(iso_3166_1)
+	CONSTRAINT FK_id_movie2 FOREIGN KEY(id_movie)
+     REFERENCES movie(id),
+	CONSTRAINT FK_iso_3166_1 FOREIGN KEY(iso_3166_1)
+     REFERENCES production_countries(iso_3166_1)
 );
 
 
@@ -200,8 +203,10 @@ CREATE TABlE movie_spoken_languages (
 	id_movie INT NOT NULL,
 	iso_639_1 VARCHAR (5) NOT NULL,
 	PRIMARY KEY(id_movie, iso_639_1),
-	CONSTRAINT FK_id_movie3 FOREIGN KEY(id_movie) REFERENCES movie(id),
-	CONSTRAINT FK_iso_639_1 FOREIGN KEY(iso_639_1) REFERENCES spoken_languages(iso_639_1)
+	CONSTRAINT FK_id_movie3 FOREIGN KEY(id_movie)
+      REFERENCES movie(id),
+	CONSTRAINT FK_iso_639_1 FOREIGN KEY(iso_639_1)
+      REFERENCES spoken_languages(iso_639_1)
 );
 
 
@@ -224,8 +229,10 @@ CREATE TABLE movie_crew (
 	job VARCHAR(100),
 	departament VARCHAR(100),
 	PRIMARY KEY(id_movie, credit_id),
-	CONSTRAINT FK_id_movie4 FOREIGN KEY (id_movie) REFERENCES movie(id),
-	CONSTRAINT FK_credit_id FOREIGN KEY (credit_id) REFERENCES person(credit_id)
+	CONSTRAINT FK_id_movie4 FOREIGN KEY (id_movie) 
+     REFERENCES movie(id),
+	CONSTRAINT FK_credit_id FOREIGN KEY (credit_id) 
+     REFERENCES person(credit_id)
 );
 
 
@@ -244,7 +251,8 @@ CREATE TABLE movie_keyword(
     id_movie INT not null,
     keyword VARCHAR(100) NOT NULL ,
     PRIMARY KEY (id_movie, keyword),
-    CONSTRAINT FK_id_movie6 FOREIGN KEY (id_movie) REFERENCES movie(id)
+    CONSTRAINT FK_id_movie6 FOREIGN KEY (id_movie) 
+    REFERENCES movie(id)
 );
 
 
@@ -264,7 +272,8 @@ CREATE TABLE movie_cast(
     id_movie INT NOT NULL,
     cast VARCHAR(100),
     PRIMARY KEY (id_movie, cast),
-    CONSTRAINT FK_id_movie7 FOREIGN KEY (id_movie) REFERENCES movie(id)
+    CONSTRAINT FK_id_movie7 FOREIGN KEY (id_movie) 
+     REFERENCES movie(id)
 );
 
 
@@ -282,7 +291,9 @@ CREATE TABLE movie_director(
     id_movie INTEGER NOT NULL,
 	credit_id CHAR(100),
 	PRIMARY KEY (id_movie, credit_id),
-	CONSTRAINT FK_id_movie8 FOREIGN KEY (id_movie) REFERENCES movie(id),
-	CONSTRAINT FK_credit_id2 FOREIGN KEY (credit_id) REFERENCES person(credit_id)
+	CONSTRAINT FK_id_movie8 FOREIGN KEY (id_movie) 
+     REFERENCES movie(id),
+	CONSTRAINT FK_credit_id2 FOREIGN KEY (credit_id) 
+     REFERENCES person(credit_id)
 );
 
